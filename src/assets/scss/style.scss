@@ -1,0 +1,84 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.img_uploaded {
+  width: 170px;
+  height: 200px;
+}
+.form-select{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid grey;
+    resize: none;
+    height: 100px;
+    outline: none;
+}
+
+.selector {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #d8d6de;
+    height: 40px;
+    outline: none;
+}
+.date_input {
+  width: 100%;
+  border: 1px solid #d8d6de;
+  border-radius: 5px;
+  height: 40px;
+}
+.filter_container {
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    width: 25%;
+  }
+}
+
+.loader_container {
+  position: absolute;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255,255,255,.5);
+    align-items: center;
+}
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: #7367f0;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%, 100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
