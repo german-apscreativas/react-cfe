@@ -52,6 +52,11 @@ const Routes = [
     path: '/dashboard/client',
     component: lazy(() => import('../../views/dashboard/client')),
     exact: true
+  },
+  {
+    path: '/dashboard/medidor',
+    component: lazy(() => import('../../views/dashboard/Medidor/Medidor.js')),
+    exact: true
   }
 ]
 

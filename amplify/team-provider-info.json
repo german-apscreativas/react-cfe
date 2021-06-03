@@ -1,23 +1,52 @@
 {
-    "dev": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-ticketsfront-dev-105313-authRole",
-            "UnauthRoleArn": "arn:aws:iam::937264965710:role/amplify-ticketsfront-dev-105313-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::937264965710:role/amplify-ticketsfront-dev-105313-authRole",
-            "Region": "us-east-2",
-            "DeploymentBucketName": "amplify-ticketsfront-dev-105313-deployment",
-            "UnauthRoleName": "amplify-ticketsfront-dev-105313-unauthRole",
-            "StackName": "amplify-ticketsfront-dev-105313",
-            "StackId": "arn:aws:cloudformation:us-east-2:937264965710:stack/amplify-ticketsfront-dev-105313/db6ef4d0-a382-11eb-8cc5-06275bf2bf34",
-            "AmplifyAppId": "d3poj58uke89rc"
-        },
-        "categories": {
-            "hosting": {
-                "amplifyhosting": {
-                    "appId": "d3poj58uke89rc",
-                    "type": "manual"
-                }
-            }
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ticketsfront-dev-105313-authRole",
+      "UnauthRoleArn": "arn:aws:iam::937264965710:role/amplify-ticketsfront-dev-105313-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::937264965710:role/amplify-ticketsfront-dev-105313-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-ticketsfront-dev-105313-deployment",
+      "UnauthRoleName": "amplify-ticketsfront-dev-105313-unauthRole",
+      "StackName": "amplify-ticketsfront-dev-105313",
+      "StackId": "arn:aws:cloudformation:us-east-2:937264965710:stack/amplify-ticketsfront-dev-105313/db6ef4d0-a382-11eb-8cc5-06275bf2bf34",
+      "AmplifyAppId": "d3poj58uke89rc"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d3poj58uke89rc",
+          "type": "manual"
         }
+      }
     }
+  },
+  "cfe": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ticketsfront-cfe-115832-authRole",
+      "UnauthRoleArn": "arn:aws:iam::771147242242:role/amplify-ticketsfront-cfe-115832-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::771147242242:role/amplify-ticketsfront-cfe-115832-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ticketsfront-cfe-115832-deployment",
+      "UnauthRoleName": "amplify-ticketsfront-cfe-115832-unauthRole",
+      "StackName": "amplify-ticketsfront-cfe-115832",
+      "StackId": "arn:aws:cloudformation:us-east-1:771147242242:stack/amplify-ticketsfront-cfe-115832/ef4c6980-c48c-11eb-b095-0a726edfb5e3",
+      "AmplifyAppId": "dnf1jdkcyxm55"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dnf1jdkcyxm55",
+          "type": "manual"
+        }
+      },
+      "auth": {
+        "ticketsfrontce95a79b": {
+          "userPoolId": "us-east-1_A47pkdpzZ",
+          "userPoolName": "pruebaMil",
+          "webClientId": "5k34tvkhdf0aufqc7bcfnrgih9",
+          "nativeClientId": "5k34tvkhdf0aufqc7bcfnrgih9"
+        }
+      }
+    }
+  }
 }

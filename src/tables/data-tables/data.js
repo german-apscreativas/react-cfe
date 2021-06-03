@@ -20,10 +20,10 @@ const status = {
 export let data
 
 // ** Get initial Data
-axios.get('/api/datatables/initial-data').then(response => {
+/*axios.get('/api/datatables/initial-data').then(response => {
   data = response.data
   console.log(data)
-})
+})*/
 
 // ** Table Zero Config Column
 export const basicColumns = [

@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 
 // const URL = 'https://wk281o55x0.execute-api.us-east-2.amazonaws.com/dev'
 // const URL = 'https://mrm0q79yp4.execute-api.us-east-2.amazonaws.com/dev'
-const URL = process.env.REACT_APP_API_URI
+const URL = 'http://localhost:4000'
 
 const headersConfig = async (isPublic) => {
     const headers = isPublic ? { 'Content-Type': 'application/json' } : {  'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -13,6 +13,7 @@ const headersConfig = async (isPublic) => {
 const configurationRequest = async (method, isPublic, body) => {
     let config = { method, headers: await headersConfig(isPublic) }
     if (method !== 'GET' && method !== 'DELETE') config = { ...config, body: JSON.stringify(body) }
+    console.log(config)
     return config
 } 
 
@@ -28,6 +29,7 @@ export const customFetch = async (pUrl, pMethod = 'GET', isPublic = true, pBody 
         const configuratedJson = await configurationRequest(pMethod, isPublic, pBody)
         const request = await fetch(`${URL}${pUrl}`, configuratedJson)
         const response = await request.json()
+        console.log("Estamos en response de CumtomFetch", response)
         if (request.status !== 200) throw new Error(manageError(response)) 
         return response
     } catch (e) {

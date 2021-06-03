@@ -27,7 +27,7 @@ const SignUp = () => {
   const [skin, setSkin] = useSkin()
   const history = useHistory()
   const [state, setState] = useState({
-    fullName: "",
+    nombre: "",
     username: "",
     email: "",
     password: "",
@@ -41,9 +41,16 @@ const SignUp = () => {
 
   const hanldeSubmit = (e) => {
     e.preventDefault()
-    if (state.fullName.length > 0 && state.email.length > 0 && state.password.length > 0) {
+    if (state.nombre.length > 0 && state.email.length > 0 && state.password.length > 0) {
       if (state.password === state.vPassword) {
-        dispatch(handleRegister({ fullname: state.fullName.trim(), email: state.email.trim(), password: state.password.trim() }, history))
+        dispatch(handleRegister({ 
+          nombre: state.nombre.trim(), 
+          email: state.email.trim(), 
+          password: state.password.trim(), 
+          username: state.username.trim(), 
+          telefono: state.telefono.trim(),
+          role: state.role.trim() 
+        }, history))
       } else {
         Swal.fire({
           icon: 'error',
@@ -146,18 +153,18 @@ const SignUp = () => {
             </CardTitle>
             <Form className="auth-login-form mt-2" onSubmit={hanldeSubmit}>
               <FormGroup>
-                <Label className="form-label" for="login-fullname">
+                <Label className="form-label" for="login-nombre">
                   Nombre completo
                 </Label>
                 <Input
                   type="text"
                   onChange={(e) => {
-                    setState({ ...state, fullName: e.currentTarget.value })
+                    setState({ ...state, nombre: e.currentTarget.value })
                   }}
-                  id="signup-fullname"
+                  id="signup-nombre"
                   placeholder="john Wick"
                   autoFocus
-                  value={state.fullName}
+                  value={state.nombre}
                 />
               </FormGroup>
               <FormGroup>
@@ -232,12 +239,14 @@ const SignUp = () => {
               </FormGroup>
               <FormGroup>
                 <Label for="login-role">Role</Label>
-                <Input type="select" name="select-role" id="selectRole">
+                <Input onChange={(e) => {
+                  setState({ ...state, role: e.currentTarget.value })
+                }} type="select" name="select-role" id="selectRole">
                   <option>Seleccione un role</option>
                   <option>ADMIN</option>
                   <option>CAPTURADOR</option>
                   <option>REPORTES</option>
-                </Input>
+                </Input>  
               </FormGroup>
               <Button.Ripple type="submit" color="primary" block>
                 Registrarse

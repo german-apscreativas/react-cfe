@@ -26,7 +26,7 @@ import { createUser } from '../redux/actions/user'
 const UserModal = ({ open, handleModal, textEdit = "Nuevo Usuario" }) => {
   // ** State
   const [form, setForm] = useState({
-    fullname: '',
+    nombre: '',
     username: '',
     email: '',
     password: '',
@@ -39,11 +39,19 @@ const UserModal = ({ open, handleModal, textEdit = "Nuevo Usuario" }) => {
 
   const submit = (e) => {
     e.preventDefault()
-    if (form.fullname.length > 0 && form.email.length > 0 && form.password.length > 0 && form.rolid.length > 0 && form.departmentid.length > 0) {
+    if (form.nombre.length > 0 
+      && form.email.length > 0 
+      && form.password.length > 0 
+      && form.username.length > 0 
+      && form.telefono.length > 0 
+      && form.role.length > 0
+      && form.rolid.length > 0 
+      && form.departmentid.length > 0
+      ) {
       dispatch(createUser(form))
     }
     setForm({
-      fullname: '',
+      nombre: '',
       username: '',
       email: '',
       password: '',
@@ -79,7 +87,7 @@ const UserModal = ({ open, handleModal, textEdit = "Nuevo Usuario" }) => {
               </InputGroupText>
             </InputGroupAddon>
             <Input id='full-name' placeholder='Bruce Wayne' value={form.name} onChange={(e) => {
-              setForm({...form, fullname: e.currentTarget.value.trim()})
+              setForm({...form, nombre: e.currentTarget.value.trim()})
             }} />
           </InputGroup>
         </FormGroup>

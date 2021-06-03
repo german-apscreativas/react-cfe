@@ -11,7 +11,6 @@ import { isUserLoggedIn } from '@utils'
 // ** Store & Actions
 import { useDispatch, useSelector } from 'react-redux'
 import { handleLogout } from '@store/actions/auth'
-import {getCurrentUser} from '../../../../redux/actions/user'
 
 // ** Third Party Components
 import { UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap'
@@ -25,6 +24,7 @@ const UserDropdown = () => {
   // ** Store Vars
   const dispatch = useDispatch()
   const data = useSelector(state => state.auth.userData)
+  console.log("Estamos", data)
   // ** State
   const [userData, setUserData] = useState(null)
 
@@ -35,10 +35,6 @@ const UserDropdown = () => {
     }
   }, [])
 
-  useEffect(() => {
-    dispatch(getCurrentUser())
-  }, [])
-
   //** Vars
   const userAvatar = (userData && userData.avatar) || defaultAvatar
 
@@ -46,8 +42,8 @@ const UserDropdown = () => {
     <UncontrolledDropdown tag='li' className='dropdown-user nav-item'>
       <DropdownToggle href='/' tag='a' className='nav-link dropdown-user-link' onClick={e => e.preventDefault()}>
         <div className='user-nav d-sm-flex d-none'>
-          <span className='user-name font-weight-bold'>{data.fullname}</span>
-          <span className='user-status'>{data.roles_name}</span>
+          <span className='user-name font-weight-bold'>{data.username}</span>
+          {/* <--<span className='user-status'>{data.role}</span> --> */}
         </div>
       </DropdownToggle>
       <DropdownMenu right>

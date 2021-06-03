@@ -4,9 +4,16 @@ import { type } from '../../type'
 import Swal from 'sweetalert2'
 import { CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js'
 import UserPool, {registerUser, verifyCode} from '../../../helpers/cognitoUser'
+import { Auth } from 'aws-amplify'
+
+
 export const handleLogin = data => {
   return async (dispatch) => {
     try {
+      const userData = {
+        username: '',
+        role: ''
+      }
       dispatch({ type: 'LOADING', loading: true })
       /* const user = new CognitoUser({
         Username: data.email,
@@ -38,17 +45,28 @@ export const handleLogin = data => {
           })
         }
       }) */
-    const request = await customFetch(
-        '/api/login',
+    /*const request = await customFetch(
+        '/dev/login',
         'POST',
         true, 
-        {email: data.email, password: data.password}
+        {username: data.username, password: data.password}
       )
+      console.log("Estamos en el request de Index", request)
       if (request.token) {
         localStorage.setItem('userData', JSON.stringify(request.user))  
         localStorage.setItem('token', request.token)
         dispatch({ type: 'LOGIN', data: request.user })
-      } 
+      } */
+      const LoginAmplify = await Auth.signIn(data.username, data.password)
+      console.log(LoginAmplify)
+      const token = LoginAmplify.signInUserSession.accessToken.jwtToken
+      userData.username = LoginAmplify.username
+      userData.role = LoginAmplify.attributes['custom:role']
+      if (token) {
+        localStorage.setItem('userData', JSON.stringify(userData))  
+        localStorage.setItem('Authorization', `Bearer ${token}`)
+        dispatch({ type: 'LOGIN', data: userData })
+      }
       dispatch({ type: 'LOADING', loading: false })
     } catch (e) {
       dispatch({ type: 'LOADING', loading: false })
@@ -76,12 +94,14 @@ export const handleLogout = () => {
 export const handleRegister = (data, history) => {
   return async dispatch => {
     try {
+      console.log("Data", data)
       dispatch({type: 'LOADING', loading: true})
       // const resp = await registerUser(UserPool, email, password)
       // if (resp) {
       
-      const request = await customFetch('/api/register', 'POST', true, {...data})
-      if (request.user) {
+      const request = await customFetch('/dev/register', 'POST', true, {...data})
+      console.log(request.message)
+      if (request.message) {
         Swal.fire({
           icon: 'success',
           text: 'Usuario registrado correctamente',

@@ -2,7 +2,7 @@
 import { Fragment, useState, useRef } from 'react'
 
 // ** Vertical Menu Items Array
-import navigation, {adminNav, employeeNav, clientNav} from '@src/navigation/vertical'
+import navigation, { adminNav, employeeNav, clientNav } from '@src/navigation/vertical'
 
 // ** Third Party Components
 import classnames from 'classnames'
@@ -11,7 +11,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 // ** Vertical Menu Components
 import VerticalMenuHeader from './VerticalMenuHeader'
 import VerticalNavMenuItems from './VerticalNavMenuItems'
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Sidebar = props => {
   // ** Props
@@ -49,10 +49,12 @@ const Sidebar = props => {
   }
 
   const navSelector = () => {
-    switch (data.roles_name) {
-      case 'CUSTOMER':
+    switch (data.role) {
+      case 'CAPTURADOR':
         return clientNav
-      case 'ADMIN': 
+      case 'REPORTES':
+        return clientNav
+      case 'ADMIN':
         return adminNav
       default:
         return employeeNav

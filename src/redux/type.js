@@ -32,5 +32,6 @@ export const type = {
     pageHistoryTicket: '[TICKET] PAGE_HISTORY',
     pageHistoryTicketAdd: '[TICKET] PAGE_HISTORY_ADD',
     loadRol: '[ROL] LOADING',
-    loadDepartment: '[DEPARTMENT] LOADING'
+    loadDepartment: '[DEPARTMENT] LOADING',
+    getMedidores: '[MEDIDORES] GET'
 }

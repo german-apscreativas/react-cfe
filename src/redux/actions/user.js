@@ -2,7 +2,7 @@
 import {type} from '../type'
 import {customFetch} from '../../helpers/customFetch'
 import Swal from 'sweetalert2'
-export const getCurrentUser = () => {
+/*export const getCurrentUser = () => {
   return async (dispatch) => {
     const request = await customFetch(`/api/user-info`, 'GET', false)
     let infoCharged = {}
@@ -12,7 +12,7 @@ export const getCurrentUser = () => {
 
     dispatch({type: type.selectUser, payload: infoCharged})
   }
-}
+}*/
 
 export const getUsers = (filter = '') => {
   return async (dispatch) => {

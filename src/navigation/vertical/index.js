@@ -2,13 +2,13 @@ import { Mail, Home, Type, Circle } from 'react-feather'
 
 export const adminNav = [
   {
-    header: 'Tickets'
+    header: 'Medidor'
   },
   {
     id: 'typography',
-    title: 'ver tickets',
+    title: 'ver Medidor1',
     icon: <Type size={12} />,
-    navLink: '/dashboard/tickets'
+    navLink: '/dashboard/medidor'
   },
   {
     header: 'Admin'
@@ -34,37 +34,37 @@ export const adminNav = [
 ]
 export const clientNav = [
   {
-    header: 'Tickets'
+    header: 'Medidor'
   },
   {
     id: 'typography',
-    title: 'ver tickets',
+    title: 'ver medidor2',
     icon: <Type size={12} />,
-    navLink: '/dashboard/client'
+    navLink: '/dashboard/medidor'
   }
 ]
 
 export const employeeNav = [
   {
-    header: 'Tickets'
+    header: 'Medidor'
   },
   {
     id: 'typography',
-    title: 'ver tickets',
+    title: 'ver medidor 3',
     icon: <Type size={12} />,
-    navLink: '/dashboard/tickets'
+    navLink: '/dashboard/medidor'
   }
 ]
 
 export default [
   {
-    header: 'Tickets'
+    header: 'Medidores'
   },
   {
     id: 'typography',
-    title: 'ver tickets',
+    title: 'ver medidor 4',
     icon: <Type size={12} />,
-    navLink: '/dashboard/tickets'
+    navLink: '/dashboard/medidor'
   },
   {
     header: 'Admin'

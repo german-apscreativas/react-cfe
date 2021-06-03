@@ -12,10 +12,11 @@ import { type } from '../redux/type'
 import Swal from 'sweetalert2'
 import {Loader} from '../components/Loader/Loader'
 
+
 const Login = () => {
   const [skin, setSkin] = useSkin()
   const [state, setState] = useState({
-    email: '',
+    username: '',
     password: ''
   })
   const dispatch = useDispatch()
@@ -25,8 +26,8 @@ const Login = () => {
 
   const hanldeSubmit = (e) => {
     e.preventDefault()
-    if (state.email.trim().length > 0 && state.password.trim().length) {
-      dispatch(handleLogin({email: state.email.trim(), password: state.password.trim()}))
+    if (state.username.trim().length > 0 && state.password.trim().length) {
+      dispatch(handleLogin({username: state.username.trim(), password: state.password.trim()}))
     } else {
       Swal.fire({
         icon: 'error',
@@ -103,18 +104,18 @@ const Login = () => {
                 </CardTitle>
                 <Form className='auth-login-form mt-2' onSubmit={hanldeSubmit}>
                   <FormGroup>
-                    <Label className='form-label' for='login-email'>
-                      Email
+                    <Label className='form-label' for='login-username'>
+                      username
                     </Label>
                     <Input 
-                      type='email' 
+                      type='username' 
                       onChange={(e) => {
-                        setState({...state, email: e.currentTarget.value.trim()})
+                        setState({...state, username: e.currentTarget.value.trim()})
                       }} 
-                      id='login-email'
-                      placeholder='john@example.com'
+                      id='login-username'
+                      placeholder='usernameExample'
                       autoFocus 
-                      value={state.email}
+                      value={state.username}
                     />
                   </FormGroup>
                   <FormGroup>
