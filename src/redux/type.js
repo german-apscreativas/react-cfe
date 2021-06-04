@@ -33,5 +33,13 @@ export const type = {
     pageHistoryTicketAdd: '[TICKET] PAGE_HISTORY_ADD',
     loadRol: '[ROL] LOADING',
     loadDepartment: '[DEPARTMENT] LOADING',
-    getMedidores: '[MEDIDORES] GET'
+    createMedidor: '[MEDIDOR] POST',
+    getMedidores: '[MEDIDORES] GET',
+    getMedidor: '[MEDIDOR] GET',
+    updateMedidor: '[MEDIDOR] UPDATE',
+    deleteMedidor: '[MEDIDOR] DELETE',
+    setMedidores: '[MEDIDORES] SET',
+    newMedidor: '[MEDIDOR] SET',
+    uiOpenModal: '[UI] OPENMODAL',
+    uiCloseModal: '[UI] CLOSEMODAL'
 }

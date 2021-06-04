@@ -9,7 +9,7 @@ export const adminNav = [
     title: 'ver Medidor1',
     icon: <Type size={12} />,
     navLink: '/dashboard/medidor'
-  },
+  }/*,
   {
     header: 'Admin'
   },
@@ -30,7 +30,7 @@ export const adminNav = [
     title: 'Usuarios',
     icon: <Circle size={12} />,
     navLink: '/dashboard/users'
-  }
+  }*/
 ]
 export const clientNav = [
   {

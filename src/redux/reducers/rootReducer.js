@@ -9,6 +9,8 @@ import departmenReducer from './departmenReducer'
 import rolesReducer from './rolesReducer'
 import userReducer from './userReducer'
 import ticketReducer from './ticketsReducer'
+import {medidorReducer} from './medidor'
+import {uiReducer} from './medidor/uiReducerMedidor'
 
 const rootReducer = combineReducers({
   auth,
@@ -17,7 +19,9 @@ const rootReducer = combineReducers({
   department: departmenReducer,
   rol: rolesReducer,
   user: userReducer,
-  ticket: ticketReducer
+  ticket: ticketReducer,
+  medidor: medidorReducer,
+  ui: uiReducer
 })
 
 export default rootReducer

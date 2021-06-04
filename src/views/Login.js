@@ -11,6 +11,7 @@ import {signinWithGoogle, signinWithFb} from '../firebase'
 import { type } from '../redux/type'
 import Swal from 'sweetalert2'
 import {Loader} from '../components/Loader/Loader'
+import Auth from '@aws-amplify/auth'
 
 
 const Login = () => {
@@ -26,6 +27,16 @@ const Login = () => {
 
   const hanldeSubmit = (e) => {
     e.preventDefault()
+    console.log("ser")
+    /*Auth.signUp({
+      username:"SergioSosa",
+      password: "123456789",
+      attributes: {
+        email: "sergioarsosa95@gmail.com",
+        name: "Sergio Sosa"
+      }
+    })*/
+    //Auth.signIn("SergioSosa", "123456789")
     if (state.username.trim().length > 0 && state.password.trim().length) {
       dispatch(handleLogin({username: state.username.trim(), password: state.password.trim()}))
     } else {

@@ -64,7 +64,7 @@ export const handleLogin = data => {
       userData.role = LoginAmplify.attributes['custom:role']
       if (token) {
         localStorage.setItem('userData', JSON.stringify(userData))  
-        localStorage.setItem('Authorization', `Bearer ${token}`)
+        localStorage.setItem('token', token)
         dispatch({ type: 'LOGIN', data: userData })
       }
       dispatch({ type: 'LOADING', loading: false })
@@ -78,10 +78,11 @@ export const handleLogin = data => {
 export const handleLogout = () => {
   return dispatch => {
     dispatch({ type: 'LOGOUT' })
-    
+
     const user = UserPool.getCurrentUser()
     if (user) user.signOut()
-    console.log(user)
+    console.log("USER", user)
+    Auth.signOut()
     dispatch({type: type.resetDepartments})
     dispatch({type: type.resetTicket})
     dispatch({type: type.resetRol})

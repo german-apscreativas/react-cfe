@@ -13,7 +13,7 @@ const headersConfig = async (isPublic) => {
 const configurationRequest = async (method, isPublic, body) => {
     let config = { method, headers: await headersConfig(isPublic) }
     if (method !== 'GET' && method !== 'DELETE') config = { ...config, body: JSON.stringify(body) }
-    console.log(config)
+    console.log("COFIG", config)
     return config
 } 
 
@@ -30,7 +30,8 @@ export const customFetch = async (pUrl, pMethod = 'GET', isPublic = true, pBody 
         const request = await fetch(`${URL}${pUrl}`, configuratedJson)
         const response = await request.json()
         console.log("Estamos en response de CumtomFetch", response)
-        if (request.status !== 200) throw new Error(manageError(response)) 
+        if (request.status !== 200) throw new Error(manageError(response))
+        console.log("Response de customFetch", response)
         return response
     } catch (e) {
         const dataError = { message: e.message}
